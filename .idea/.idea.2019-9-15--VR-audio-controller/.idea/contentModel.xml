@@ -784,6 +784,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="AudioObject.cs" t="Include" />
+          <e p="BinauralHead.cs" t="Include" />
           <e p="Manipulate.cs" t="Include" />
           <e p="NotePad.cs" t="Include" />
           <e p="Pointer.cs" t="Include" />

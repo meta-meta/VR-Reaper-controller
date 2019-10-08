@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class AudioObject : MonoBehaviour
 {
     [Range(0, 11)]
@@ -20,7 +20,7 @@ public class AudioObject : MonoBehaviour
         get
         {
             if (!_manipulate) _manipulate = gameObject.GetComponent<Manipulate>();
-            return _manipulate.IsGrabbed;
+            return _manipulate.IsGrabbing;
         }
     }
 
@@ -28,10 +28,6 @@ public class AudioObject : MonoBehaviour
 
     private OscIn _oscInReaper;
     private OscOut _oscOutReaper;
-    
-    private OscMessage _listenerX;
-    private OscMessage _listenerY;
-    private OscMessage _listenerZ;
     
     private OscMessage _roomX;
     private OscMessage _roomY;
@@ -47,7 +43,7 @@ public class AudioObject : MonoBehaviour
     {
         _oscOutReaper = GameObject.Find("OSC").GetComponents<OscOut>().First(oscOut => oscOut.port == 8001);
         _oscInReaper = GameObject.Find("OSC").GetComponents<OscIn>().First(oscIn => oscIn.port == 7001);
-//        RemapOsc();
+        RemapOsc();
     }
 
     void RemapOsc()
@@ -119,10 +115,9 @@ public class AudioObject : MonoBehaviour
     private void OnValidate()
     {
         var meshRenderer = GetComponent<MeshRenderer>();
-        if (meshRenderer.material.name != Color.ToString())
+        if (meshRenderer.sharedMaterial.name != Color.ToString())
         {
-            Debug.Log(Color);
-            meshRenderer.material = Resources.Load<Material>($"Materials/AudioObject/{Color}");
+            meshRenderer.sharedMaterial = Resources.Load<Material>($"Materials/AudioObject/{Color}");
         }
 
         if (FindTrack)
