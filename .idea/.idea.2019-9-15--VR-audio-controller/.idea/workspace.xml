@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b6cf53b-304e-416d-897e-2c66f8bc300a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2019-9-15--VR-audio-controller/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2019-9-15--VR-audio-controller/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2019-9-15--VR-audio-controller/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2019-9-15--VR-audio-controller/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2019-9-15--VR-audio-controller/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2019-9-15--VR-audio-controller/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tonnetz.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tonnetz.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manipulate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manipulate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +16,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NotePad.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/LeapMotion/North Star/Scripts/WindowOffsetManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Oculus/VR/Scripts/OVRInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OscSimpl/Examples/04 Bundles/UsingBundles.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Manipulate.cs" root0="FORCE_HIGHLIGHTING" />
@@ -33,8 +29,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/VrObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pointer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BinauralHead.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/LeapMotion/North Star/Scripts/OpticalCalibrationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AudioObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/LeapMotion/Modules/GraphicRenderer/Testing/Scripts/Tests/TestAddRemove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/LeapMotion/North Star/Editor/WindowOffsetManagerEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OscSimpl/OscOut.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/LeapMotion/Core/Scripts/Attachments/Editor/AttachmentHandsEditor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -47,6 +47,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/BinauralHead.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AudioObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Manipulate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/LeapMotion/North Star/Editor/WindowOffsetManagerEditor.cs" />
       </list>
     </option>
   </component>
@@ -102,7 +103,8 @@
       <workItem from="1570085656267" duration="633000" />
       <workItem from="1570231966901" duration="17969000" />
       <workItem from="1570308105371" duration="5116000" />
-      <workItem from="1570485674985" duration="9647000" />
+      <workItem from="1570485674985" duration="10264000" />
+      <workItem from="1572220108784" duration="1096000" />
     </task>
     <servers />
   </component>
@@ -113,7 +115,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
