@@ -9,9 +9,9 @@ public class VrObject : MonoBehaviour
     {
         
     }
-
+    
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         OVRPose p = OVRPlugin.GetNodePose(OVRPlugin.Node.DeviceObjectZero, OVRPlugin.Step.Render).ToOVRPose();
 
