@@ -7,6 +7,9 @@ public class Tonnetz : MonoBehaviour
     public GameObject prefab;
     public bool isColorChromatic;
 
+    private const float hpad = Mathf.PI / 28;
+    private const float vpad = 0.08f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,13 @@ public class Tonnetz : MonoBehaviour
                 var note = 32 + n + s * 7;
 
                 var notePad = GameObject.Instantiate(prefab, transform);
-                notePad.transform.localPosition = new Vector3(n * 0.15f, 0, s * 0.15f);
+                notePad.transform.localPosition = new Vector3( 
+                    0.7f * Mathf.Cos(-n * hpad),
+                    s * vpad - 0.5f,
+                    0.7f * Mathf.Sin(-n * hpad) //+ Mathf.Sin(s * Mathf.PI / 48)
+                    );
+                
+                notePad.transform.LookAt(transform);
                 
                 var mat = isColorChromatic ? note % 12 : (note * 7) % 12;
                 notePad.GetComponent<MeshRenderer>().material = Resources.Load<Material>($"Materials/n{mat}");

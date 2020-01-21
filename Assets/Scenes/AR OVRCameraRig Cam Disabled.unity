@@ -373,7 +373,7 @@ MonoBehaviour:
       m_Calls: []
   _port: 8001
   _mode: 1
-  _remoteIpAddress: 192.168.1.34
+  _remoteIpAddress: 192.168.1.17
   _remoteStatus: 2
   _multicastLoopback: 0
   _bundleMessagesOnEndOfFrame: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
       m_Calls: []
   _port: 8000
   _mode: 1
-  _remoteIpAddress: 192.168.1.34
+  _remoteIpAddress: 192.168.1.17
   _remoteStatus: 2
   _multicastLoopback: 1
   _bundleMessagesOnEndOfFrame: 0
@@ -1124,6 +1124,75 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1001 &1240446037
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2298338497083249414, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Studio
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.7731498
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0016975403
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.0140624
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298338497083249415, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38c4ce4721083214ba06f18aa48cdbfe, type: 3}
 --- !u!1001 &1342469969
 PrefabInstance:
   m_ObjectHideFlags: 0
