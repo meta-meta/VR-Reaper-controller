@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Projects\VR-audio-controller" t="IncludeRecursive">
@@ -1875,9 +1875,6 @@
             <e p="_Untitled__Paul_Christian_80uoJSjNYSU" t="Include">
               <e p="FileNameMapping.txt" t="Include" />
             </e>
-            <e p="The_Upside_Down_Sutu_Eats_Flies_ervEzbIlddY" t="Include">
-              <e p="FileNameMapping.txt" t="Include" />
-            </e>
           </e>
         </e>
         <e p="PolyToolkit" t="Include">
@@ -2131,8 +2128,20 @@
           <e p="Manipulate.cs" t="Include" />
           <e p="NotePad.cs" t="Include" />
           <e p="Pointer.cs" t="Include" />
+          <e p="Theremin.cs" t="Include" />
           <e p="Tonnetz.cs" t="Include" />
           <e p="VrObject.cs" t="Include" />
+        </e>
+        <e p="UCLAGameLab" t="Include">
+          <e p="Wireframe" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="UCLA GameLab Cutout Wireframe.shader" t="Include" />
+              <e p="UCLA GameLab Double-Sided Cutout Wireframe.shader" t="Include" />
+              <e p="UCLA GameLab Double-Sided Wireframe.shader" t="Include" />
+              <e p="UCLA GameLab Wireframe Functions.cginc" t="Include" />
+              <e p="UCLA GameLab Wireframe.shader" t="Include" />
+            </e>
+          </e>
         </e>
       </e>
       <e p="FullscreenEditor.csproj" t="IncludeRecursive" />

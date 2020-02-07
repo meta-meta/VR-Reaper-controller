@@ -10,6 +10,8 @@ public class AudioObjectIEM : MonoBehaviour
     [Range(0, 11)]
     public int Color;
 
+    public bool AlwaysSendPosition = true;
+
     private int _prevTrackNum;
     public int PortIn;
     public int PortOut;
@@ -131,7 +133,7 @@ public class AudioObjectIEM : MonoBehaviour
     {
         UpdateNametag();
 
-        if (_isGrabbed)
+        if (_isGrabbed || AlwaysSendPosition)
         {
             SendPositionToRoomEncoder();
         }
