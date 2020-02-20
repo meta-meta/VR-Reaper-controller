@@ -43,11 +43,12 @@ public class AudioObjectIEM : MonoBehaviour
     
     private void Start()
     {
-        
+        var ip = GameObject.Find("OSC").GetComponent<OscManager>().RemoteIpAddress;
+
         if (PortOut > 0)
         {
             _oscOutRoomEncoder = gameObject.AddComponent<OscOut>();
-            _oscOutRoomEncoder.Open(PortOut, "192.168.1.17"); // TODO: move somewhere else
+            _oscOutRoomEncoder.Open(PortOut, ip);
             
             _sourceX = new OscMessage($"/RoomEncoder/sourceX");
             _sourceY = new OscMessage($"/RoomEncoder/sourceY");

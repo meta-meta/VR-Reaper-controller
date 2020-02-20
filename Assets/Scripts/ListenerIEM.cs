@@ -33,12 +33,12 @@ public class ListenerIEM : MonoBehaviour
     
     private void Start()
     {
+        var ip = GameObject.Find("OSC").GetComponent<OscManager>().RemoteIpAddress;
+
         if (PortOut > 0)
         {
-//            _oscOutRoomEncoder = RoomMaster.GetComponent<OscOut>();
-
             _oscOutRoomEncoder = gameObject.AddComponent<OscOut>();
-            _oscOutRoomEncoder.Open(PortOut, "192.168.1.17"); // TODO: move somewhere else
+            _oscOutRoomEncoder.Open(PortOut, ip);
             
             _listenerX = new OscMessage($"/RoomEncoder/listenerX");
             _listenerY = new OscMessage($"/RoomEncoder/listenerY");
@@ -48,7 +48,7 @@ public class ListenerIEM : MonoBehaviour
         if (PortOutSceneRotator > 0)
         {
             _oscOutSceneRotator = gameObject.AddComponent<OscOut>();
-            _oscOutSceneRotator.Open(PortOutSceneRotator, "192.168.1.17"); // TODO: move somewhere else
+            _oscOutSceneRotator.Open(PortOutSceneRotator, ip);
             
             _yaw = new OscMessage($"/SceneRotator/yaw");
             _pitch = new OscMessage($"/SceneRotator/pitch");
