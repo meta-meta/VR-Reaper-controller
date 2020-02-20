@@ -14,7 +14,7 @@ public class OscManager : MonoBehaviour
     public OscOut OscOutMaxMsp;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (RemoteIpAddress.Length > 0)
         {

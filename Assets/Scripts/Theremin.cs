@@ -29,7 +29,7 @@ public class Theremin : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		_oscOutMax = GameObject.Find("OSC").GetComponents<OscOut>().First(oscOUt => oscOUt.port == 8000);
+		_oscOutMax = GameObject.Find("OSC").GetComponent<OscManager>().OscOutMaxMsp;
 
         freq = new OscMessage($"{_addr}/freq");
         amp = new OscMessage($"{_addr}/amp");

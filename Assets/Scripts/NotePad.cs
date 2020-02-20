@@ -16,7 +16,7 @@ public class NotePad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _oscOutMax = GameObject.Find("OSC").GetComponents<OscOut>().First(oscOUt => oscOUt.port == 8000);
+        _oscOutMax = GameObject.Find("OSC").GetComponent<OscManager>().OscOutMaxMsp;
     }
 
     // Update is called once per frame
