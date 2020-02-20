@@ -10,6 +10,8 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+/Arcadia/Compiled/
+
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
