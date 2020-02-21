@@ -2008,7 +2008,9 @@
             </e>
           </e>
         </e>
+        <e p="Save.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="AppData.cs" t="Include" />
           <e p="AudioObject.cs" t="Include" />
           <e p="AudioObjectIEM.cs" t="Include" />
           <e p="BinauralHead.cs" t="Include" />

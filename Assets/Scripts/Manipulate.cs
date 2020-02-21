@@ -17,8 +17,14 @@ public class Manipulate : MonoBehaviour
     private float _controllerDistanceAtPinchStart;
     private GameObject _touchControllerPinch;
     private OVRInput.Controller _controllerMaskPinch = OVRInput.Controller.None;
-    private Vector3 _scaleAtPinchStart; 
+    private Vector3 _scaleAtPinchStart;
 
+    private Save _save;
+
+    void Start()
+    {
+        _save = GameObject.Find("App").GetComponent<Save>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +38,11 @@ public class Manipulate : MonoBehaviour
             IsGrabbing = true;
             _parentAtGrab = transform.parent;
             transform.SetParent(_touchControllerGrab.transform, true);
+        }
+
+        if (IsTouching && OVRInput.GetDown(OVRInput.Button.One, _controllerMaskGrab))
+        {
+            _save.SavePosition(gameObject);
         }
         
         if (
