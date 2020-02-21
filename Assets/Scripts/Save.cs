@@ -56,7 +56,12 @@ public class Save : MonoBehaviour
 
     public void SavePosition(GameObject go)
     {
-        data.Transforms[go.name] = go.transform;
+        var sTransform = new SerializableTransform();
+        sTransform.localPosition = go.transform.localPosition;
+        sTransform.localScale = go.transform.localScale;
+        sTransform.localRotation = go.transform.localRotation;
+        
+        data.Transforms[go.name] = sTransform;
         FileStream file;
  
         if(File.Exists(filePath)) file = File.OpenWrite(filePath);

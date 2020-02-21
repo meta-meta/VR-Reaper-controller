@@ -18,9 +18,10 @@
       <Path>.git</Path>
       <Path>.idea</Path>
       <Path>.vs</Path>
-      <Path>Arcadia</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>Temp</Path>
+      <Path>build</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>
