@@ -27,6 +27,20 @@ public class NotePad : MonoBehaviour
          *   * colored eggs are "shells" over the actual notes. They can all be shifted (transpose) to make the new red egg wrap around static D rather than static C
          *   * ability to select a note and some scale or chord mask on top so that the out of key eggs cannot be hit
          */
+        
+        // TODO: individual sustain for each hand (need 2 separate instances of pianoteq)
+        if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
+            OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)))
+        {
+            _oscOutMax.Send(new OscMessage($"{oscAddr}/cc").Add(64).Add(127));
+        }
+        
+        if ((OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) ||
+             OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger)))
+        {
+            _oscOutMax.Send(new OscMessage($"{oscAddr}/cc").Add(64).Add(0));
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,16 +52,16 @@ public class NotePad : MonoBehaviour
             _touchController = other.gameObject;
             _controllerMask = pointer.Controller;
 
-            var trigger = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, pointer.Controller);
+//            var trigger = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, pointer.Controller);
             var controllerVel = OVRInput.GetLocalControllerVelocity(pointer.Controller).magnitude;
             var vel = Mathf.Lerp(0, 1, controllerVel / 3.5f);
-            var comboVel = vel + trigger / 3f;
+//            var comboVel = vel + trigger / 3f;
 
-            Vibe(comboVel, pointer.Controller);
+            Vibe(vel, pointer.Controller);
             _oscOutMax.Send(
-                new OscMessage(oscAddr)
+                new OscMessage($"{oscAddr}/note")
                     .Add(note)
-                    .Add(Mathf.FloorToInt(comboVel * 127f))
+                    .Add(Mathf.FloorToInt(vel * 127f))
             );
         }
     }
@@ -59,7 +73,7 @@ public class NotePad : MonoBehaviour
         {
             Vibe(0.1f, pointer.Controller);
             _oscOutMax.Send(
-                new OscMessage(oscAddr)
+                new OscMessage($"{oscAddr}/note")
                     .Add(note)
                     .Add(0)
             );

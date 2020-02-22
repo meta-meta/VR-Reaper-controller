@@ -2581,7 +2581,7 @@ GameObject:
   - component: {fileID: 917724350}
   - component: {fileID: 917724349}
   m_Layer: 0
-  m_Name: TV
+  m_Name: CamMonitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2595,8 +2595,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917724347}
   m_LocalRotation: {x: 0.18864806, y: -0.019261776, z: 0.0038594524, w: 0.98184824}
-  m_LocalPosition: {x: -0.0996, y: 0.092, z: -0.1319}
-  m_LocalScale: {x: 0.08751673, y: 0.04267978, z: 0.015407872}
+  m_LocalPosition: {x: -0.1087, y: 0.092, z: -0.1323}
+  m_LocalScale: {x: 0.10621633, y: 0.059746683, z: 0.055321004}
   m_Children: []
   m_Father: {fileID: 899124215}
   m_RootOrder: 1
@@ -2624,7 +2624,7 @@ MeshRenderer:
   m_GameObject: {fileID: 917724347}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2670,6 +2670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 948117206}
+  - component: {fileID: 948117207}
   m_Layer: 0
   m_Name: App
   m_TagString: Untagged
@@ -2692,6 +2693,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &948117207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948117205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc417bee99777c84ba583a30e8c0db1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filename: save.dat
 --- !u!1 &959390480
 GameObject:
   m_ObjectHideFlags: 0
@@ -5143,7 +5157,6 @@ GameObject:
   - component: {fileID: 1724852036}
   - component: {fileID: 1724852035}
   - component: {fileID: 1724852034}
-  - component: {fileID: 1724852033}
   m_Layer: 0
   m_Name: Theremin Speaker
   m_TagString: Untagged
@@ -5166,32 +5179,6 @@ Transform:
   m_Father: {fileID: 760173951}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1724852033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724852031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a83e4d41d3144efb843adad75b278d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _openOnAwake: 0
-  _udpBufferSize: 8192
-  _inspectorMessageEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _port: 7012
-  _mode: 1
-  _remoteIpAddress: 192.168.1.17
-  _remoteStatus: 2
-  _multicastLoopback: 1
-  _bundleMessagesOnEndOfFrame: 0
-  _splitBundlesAvoidingBufferOverflow: 1
-  _settingsFoldout: 0
-  _messagesFoldout: 0
 --- !u!114 &1724852034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5694,6 +5681,10 @@ PrefabInstance:
     - target: {fileID: 2037080, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_TargetDisplay
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037080, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: near clip plane
+      value: 0.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
@@ -6553,6 +6544,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 944feb076639a4d39b750e3cb5d7dfab, type: 2}
+    - target: {fileID: 2735632615946075477, guid: 38c4ce4721083214ba06f18aa48cdbfe,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38c4ce4721083214ba06f18aa48cdbfe, type: 3}
 --- !u!1001 &9072124921201250748

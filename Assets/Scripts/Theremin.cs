@@ -61,8 +61,8 @@ public class Theremin : MonoBehaviour
 	    priY.Set(0, priThumb.y);
 	    secX.Set(0, secThumb.x);
 	    secY.Set(0, secThumb.y);
-	    noise.Set(0, OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, controllerLeft));
-	    voice.Set(0, OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, controllerRight));
+	    noise.Set(0, OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controllerLeft));
+	    voice.Set(0, OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controllerRight));
 
 	    _oscOutMax.Send(freq);
 	    _oscOutMax.Send(amp);
