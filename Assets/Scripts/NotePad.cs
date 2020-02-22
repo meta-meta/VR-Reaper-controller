@@ -13,6 +13,8 @@ public class NotePad : MonoBehaviour
     private GameObject _touchController;
     private OVRInput.Controller _controllerMask;
 
+    private Color _color;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,8 @@ public class NotePad : MonoBehaviour
 
         var n = note % 12;
         gameObject.GetComponentInChildren<TextMesh>().text = n == 11 ? "Ɛ" : n == 10 ? "૪" : n.ToString();
+
+        _color = GetComponent<MeshRenderer>().material.color;
     }
 
     // Update is called once per frame
@@ -46,6 +50,7 @@ public class NotePad : MonoBehaviour
 
     }
 
+    private IEnumerator _lightUp;
     private void OnTriggerEnter(Collider other)
     {
         var pointer = other.GetComponent<Pointer>();
@@ -66,6 +71,11 @@ public class NotePad : MonoBehaviour
                     .Add(note)
                     .Add(Mathf.FloorToInt(vel * 127f))
             );
+
+            // https://answers.unity.com/questions/300864/how-to-stop-a-co-routine-in-c-instantly.html
+            if(_lightUp != null) StopCoroutine(_lightUp);
+            _lightUp = LightUp(vel);
+            StartCoroutine(_lightUp);
         }
     }
     
@@ -82,6 +92,24 @@ public class NotePad : MonoBehaviour
             );
             _touchController = null;
             _controllerMask = OVRInput.Controller.None;
+        }
+    }
+    
+    IEnumerator LightUp(float vel)
+    {
+        var duration = 4f;
+        var timeout = vel * duration;
+        while (true)
+        {
+            yield return null;
+            timeout -= Time.deltaTime;
+            
+            GetComponent<MeshRenderer>().material.color = new Color(_color.r, _color.g, _color.b, Mathf.Lerp(_color.a, vel * 10, timeout / duration));
+            if (timeout <= 0f)
+            {
+                GetComponent<MeshRenderer>().material.color = _color;
+                break;
+            }
         }
     }
 
