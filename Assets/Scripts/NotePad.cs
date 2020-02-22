@@ -17,6 +17,9 @@ public class NotePad : MonoBehaviour
     void Start()
     {
         _oscOutMax = GameObject.Find("OSC").GetComponent<OscManager>().OscOutMaxMsp;
+
+        var n = note % 12;
+        gameObject.GetComponentInChildren<TextMesh>().text = n == 11 ? "Ɛ" : n == 10 ? "૪" : n.ToString();
     }
 
     // Update is called once per frame
