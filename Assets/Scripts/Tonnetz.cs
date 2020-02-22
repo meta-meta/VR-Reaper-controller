@@ -17,7 +17,7 @@ public class Tonnetz : MonoBehaviour
         {
             for (var n = 0; n < 24; n++)
             {
-                var note = 32 + n + s * 7;
+                var note = 24 + n + s * 7;
 
                 var notePad = GameObject.Instantiate(prefab, transform);
                 notePad.transform.localPosition = new Vector3( 

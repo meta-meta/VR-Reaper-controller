@@ -104,7 +104,7 @@ public class NotePad : MonoBehaviour
             yield return null;
             timeout -= Time.deltaTime;
             
-            GetComponent<MeshRenderer>().material.color = new Color(_color.r, _color.g, _color.b, Mathf.Lerp(_color.a, vel * 10, timeout / duration));
+            GetComponent<MeshRenderer>().material.color = new Color(_color.r, _color.g, _color.b, Mathf.Lerp(_color.a, 0.9f + vel * 10, timeout / duration));
             if (timeout <= 0f)
             {
                 GetComponent<MeshRenderer>().material.color = _color;

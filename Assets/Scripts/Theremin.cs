@@ -24,7 +24,8 @@ public class Theremin : MonoBehaviour
     private OscMessage click;
     private OscMessage noise;
     private OscMessage voice;
-    
+
+    private bool isOn;
     
 	// Use this for initialization
 	void Start ()
@@ -52,27 +53,38 @@ public class Theremin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    freq.Set(0, dist(freqObj, pointerRight));
-	    amp.Set(0, dist(ampObj, pointerLeft));
+	    if (isOn)
+	    {
+		    freq.Set(0, dist(freqObj, pointerRight));
+		    amp.Set(0, dist(ampObj, pointerLeft));
 
-	    var priThumb = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, controllerLeft);
-	    var secThumb = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, controllerRight);
-	    priX.Set(0, priThumb.x);
-	    priY.Set(0, priThumb.y);
-	    secX.Set(0, secThumb.x);
-	    secY.Set(0, secThumb.y);
-	    noise.Set(0, OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controllerLeft));
-	    voice.Set(0, OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controllerRight));
+		    var priThumb = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, controllerLeft);
+		    var secThumb = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, controllerRight);
+		    priX.Set(0, priThumb.x);
+		    priY.Set(0, priThumb.y);
+		    secX.Set(0, secThumb.x);
+		    secY.Set(0, secThumb.y);
+		    noise.Set(0, OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controllerLeft));
+		    voice.Set(0, OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controllerRight));
 
-	    _oscOutMax.Send(freq);
-	    _oscOutMax.Send(amp);
-	    _oscOutMax.Send(priX);
-	    _oscOutMax.Send(priY);
-	    _oscOutMax.Send(secX);
-	    _oscOutMax.Send(secY);
-	    _oscOutMax.Send(noise);
-	    _oscOutMax.Send(voice);
+		    _oscOutMax.Send(freq);
+		    _oscOutMax.Send(amp);
+		    _oscOutMax.Send(priX);
+		    _oscOutMax.Send(priY);
+		    _oscOutMax.Send(secX);
+		    _oscOutMax.Send(secY);
+		    _oscOutMax.Send(noise);
+		    _oscOutMax.Send(voice);
 
-	    if (OVRInput.GetDown(OVRInput.Button.One, controllerLeft)) _oscOutMax.Send(click);
+		    if (OVRInput.GetDown(OVRInput.Button.One, controllerLeft)) _oscOutMax.Send(click);
+	    }
+
+	    if (GetComponent<Manipulate>().IsTouching && (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
+	                                                  OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)))
+	    {
+		    isOn = !isOn;
+		    ampObj.GetComponent<MeshRenderer>().material.SetFloat("_RimPower", isOn ? 0.5f : 2);
+		    freqObj.GetComponent<MeshRenderer>().material.SetFloat("_RimPower", isOn ? 0.5f : 2);
+	    }
     }
 }
