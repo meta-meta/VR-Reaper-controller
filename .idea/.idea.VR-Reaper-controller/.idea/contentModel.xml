@@ -692,7 +692,6 @@
             </e>
           </e>
         </e>
-        <e p="OscManager.cs" t="Include" />
         <e p="OscSimpl" t="Include">
           <e p="Base" t="Include">
             <e p="ArgumentDataTypes" t="Include">
@@ -1764,6 +1763,9 @@
             <e p="_Untitled__Paul_Christian_80uoJSjNYSU" t="Include">
               <e p="FileNameMapping.txt" t="Include" />
             </e>
+            <e p="masonic_sun_Natasha_M_0Cb0SMsLzBq" t="Include">
+              <e p="FileNameMapping.txt" t="Include" />
+            </e>
           </e>
         </e>
         <e p="PolyToolkit" t="Include">
@@ -2008,17 +2010,21 @@
             </e>
           </e>
         </e>
-        <e p="Save.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AppData.cs" t="Include" />
           <e p="AudioObject.cs" t="Include" />
           <e p="AudioObjectIEM.cs" t="Include" />
           <e p="BinauralHead.cs" t="Include" />
           <e p="HeadDock.cs" t="Include" />
+          <e p="HideControllerWhenHolding.cs" t="Include" />
           <e p="ListenerIEM.cs" t="Include" />
           <e p="Manipulate.cs" t="Include" />
           <e p="NotePad.cs" t="Include" />
+          <e p="OscManager.cs" t="Include" />
           <e p="Pointer.cs" t="Include" />
+          <e p="Save.cs" t="Include" />
+          <e p="SerializableQuaternion.cs" t="Include" />
+          <e p="SerializableVector3.cs" t="Include" />
           <e p="Theremin.cs" t="Include" />
           <e p="Tonnetz.cs" t="Include" />
           <e p="VrObject.cs" t="Include" />
