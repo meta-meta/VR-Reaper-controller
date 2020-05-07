@@ -1,0 +1,3 @@
+{; https://github.com/arcadia-unity/Arcadia/wiki/Configuration
+:source-paths ["Assets/Clojure"]
+}
