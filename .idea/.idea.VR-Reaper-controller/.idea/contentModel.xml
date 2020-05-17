@@ -2050,7 +2050,7 @@
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="VR-Reaper-controller.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\paulm\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\paulm\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_VR-Reaper-controller.-1510877453.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Virtual Person\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Virtual Person\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_VR-Reaper-controller.-1510877453.00" t="ExcludeRecursive" />
   </component>
 </project>
