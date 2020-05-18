@@ -2040,6 +2040,47 @@
             </e>
           </e>
         </e>
+        <e p="uDesktopDuplication" t="Include">
+          <e p="Editor" t="Include">
+            <e p="TextureEditor.cs" t="Include" />
+            <e p="uDD-Editor.asmdef" t="Include" />
+            <e p="Utils.cs" t="Include" />
+          </e>
+          <e p="Examples" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="BufferExample.cs" t="Include" />
+              <e p="DisplacementMapping.cs" t="Include" />
+              <e p="GazePointAnalyzer.cs" t="Include" />
+              <e p="GetPixelsExample.cs" t="Include" />
+              <e p="Loupe.cs" t="Include" />
+              <e p="MultipleMonitorAnalyzer.cs" t="Include" />
+              <e p="MultipleMonitorCreator.cs" t="Include" />
+              <e p="MultipleMonitorLayouter.cs" t="Include" />
+              <e p="MultipleMonitorRoundLayouter.cs" t="Include" />
+              <e p="RaycastExample.cs" t="Include" />
+              <e p="ToggleMonitors.cs" t="Include" />
+              <e p="uDD-Examples.asmdef" t="Include" />
+              <e p="UddSceneManager.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Lib.cs" t="Include" />
+            <e p="Manager.cs" t="Include" />
+            <e p="Monitor.cs" t="Include" />
+            <e p="Texture.cs" t="Include" />
+            <e p="uDD-Scripts.asmdef" t="Include" />
+            <e p="Utility.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="uDD_Common.cginc" t="Include" />
+            <e p="uDD_Params.cginc" t="Include" />
+            <e p="uDD_Standard.shader" t="Include" />
+            <e p="uDD_Unlit.shader" t="Include" />
+            <e p="uDD_Unlit_BlackMask.shader" t="Include" />
+            <e p="uDD_Unlit_Displacement.shader" t="Include" />
+            <e p="uDD_Unlit_Transparent.shader" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="FullscreenEditor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
@@ -2048,6 +2089,9 @@
       <e p="Oculus.VR.Scripts.Editor.csproj" t="IncludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="uDD-Editor.csproj" t="IncludeRecursive" />
+      <e p="uDD-Examples.csproj" t="IncludeRecursive" />
+      <e p="uDD-Scripts.csproj" t="IncludeRecursive" />
       <e p="VR-Reaper-controller.sln" t="IncludeFlat" />
     </e>
     <e p="C:\Users\Virtual Person\.Rider2019.2\system\extResources" t="IncludeRecursive" />
