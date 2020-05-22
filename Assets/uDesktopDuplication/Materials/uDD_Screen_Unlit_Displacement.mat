@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: uDD_Screen_Unlit_Displacement
   m_Shader: {fileID: 4800000, guid: 8d8bed8b85c7bb844a44481b2feb53ca, type: 3}
-  m_ShaderKeywords: BEND_ON _CULL_OFF _FORWARD_Z
+  m_ShaderKeywords: BEND_ON USE_CLIP _CULL_OFF _FORWARD_Z
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0

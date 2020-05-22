@@ -105,12 +105,17 @@ public class AudioObjectIEM : MonoBehaviour
 
     private void OnValidate()
     {
+        SetColor(Color);
+    }
+
+    public void SetColor(int color)
+    {
+        Color = color;
         var meshRenderer = GetComponent<MeshRenderer>();
         if (meshRenderer.sharedMaterial.name != Color.ToString())
         {
             meshRenderer.sharedMaterial = Resources.Load<Material>($"Materials/AudioObject/{Color}");
         }
-
     }
 
     static float Scale(float inMin, float inMax, float outMin, float outMax, float val) =>
