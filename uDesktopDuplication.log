@@ -1,14 +1,14 @@
-[uDD::Log][2020-05-17 20:10:20] Start
-[uDD::Log][2020-05-17 20:10:20] OS Version    : 10.0
-[uDD::Log][2020-05-17 20:10:20] Build Number  : 18362
-[uDD::Log][2020-05-17 20:10:20] Service Pack  : 
-[uDD::Log][2020-05-17 20:10:20] Graphics Card [0] : NVIDIA GeForce GTX 970
-[uDD::Log][2020-05-17 20:10:20]   > Monitor[0] : \\.\DISPLAY1
-[uDD::Log][2020-05-17 20:10:20] Graphics Card [1] : Microsoft Basic Render Driver
-[uDD::Log][2020-05-17 20:10:20] Monitor::Initialized() =>
-[uDD::Log][2020-05-17 20:10:20]     ID    : 0
-[uDD::Log][2020-05-17 20:10:20]     Size  : (3440, 1440)
-[uDD::Log][2020-05-17 20:10:20]     DPI   : (109, 109)
-[uDD::Log][2020-05-17 20:10:20]     Rot   : Landscape
-[uDD::Log][2020-05-17 20:10:20] Duplicator::Initialize() => OK.
-[uDD::Log][2020-05-17 20:22:55] Stop
+[uDD::Log][2020-05-21 22:18:31] Start
+[uDD::Log][2020-05-21 22:18:31] OS Version    : 10.0
+[uDD::Log][2020-05-21 22:18:31] Build Number  : 18362
+[uDD::Log][2020-05-21 22:18:31] Service Pack  : 
+[uDD::Log][2020-05-21 22:18:31] Graphics Card [0] : NVIDIA GeForce GTX 970
+[uDD::Log][2020-05-21 22:18:31]   > Monitor[0] : \\.\DISPLAY1
+[uDD::Log][2020-05-21 22:18:31] Graphics Card [1] : Microsoft Basic Render Driver
+[uDD::Log][2020-05-21 22:18:31] Monitor::Initialized() =>
+[uDD::Log][2020-05-21 22:18:31]     ID    : 0
+[uDD::Log][2020-05-21 22:18:31]     Size  : (3440, 1440)
+[uDD::Log][2020-05-21 22:18:31]     DPI   : (109, 109)
+[uDD::Log][2020-05-21 22:18:31]     Rot   : Landscape
+[uDD::Log][2020-05-21 22:18:31] Duplicator::Initialize() => OK.
+[uDD::Log][2020-05-21 23:53:53] Stop
