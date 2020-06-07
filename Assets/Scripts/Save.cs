@@ -24,6 +24,7 @@ public class Save : MonoBehaviour
 
     public void LoadPositions()
     {
+        Debug.Log("Loading from " + filePath);
         FileStream file;
  
         if(File.Exists(filePath)) file = File.OpenRead(filePath);
