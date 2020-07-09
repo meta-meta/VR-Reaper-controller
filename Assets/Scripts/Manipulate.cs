@@ -11,6 +11,7 @@ public class Manipulate : MonoBehaviour
     public bool IsTouching;// { get; private set; }
 
     public bool ConstrainRoll;
+    public bool ControlParent; //TODO use to manipulate parent GameObject instead of this
 
     private GameObject _touchControllerGrab;
     private OVRInput.Controller _controllerMaskGrab = OVRInput.Controller.None;

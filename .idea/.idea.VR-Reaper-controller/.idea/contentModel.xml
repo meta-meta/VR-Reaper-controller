@@ -2011,6 +2011,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AmbisonicVisualizer.cs" t="Include" />
           <e p="AppData.cs" t="Include" />
           <e p="AudioObject.cs" t="Include" />
           <e p="AudioObjectIEM.cs" t="Include" />
@@ -2094,7 +2095,7 @@
       <e p="uDD-Scripts.csproj" t="IncludeRecursive" />
       <e p="VR-Reaper-controller.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\Virtual Person\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Virtual Person\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_VR-Reaper-controller.-1510877453.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Paul\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Paul\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_VR-Reaper-controller.-1510877453.00" t="ExcludeRecursive" />
   </component>
 </project>

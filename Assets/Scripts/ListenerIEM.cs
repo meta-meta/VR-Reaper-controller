@@ -20,16 +20,20 @@ public class ListenerIEM : MonoBehaviour
     private OscOut _oscOutRoomEncoder;
     private OscOut _oscOutSceneRotator;
 
-    private Vector3 _rot;
+    private Quaternion _rot;
     private Vector3 _pos;
 
-    private OscMessage _yaw;
-    private OscMessage _pitch;
-    private OscMessage _roll;
+    private OscMessage _qw;
+    private OscMessage _qx;
+    private OscMessage _qy;
+    private OscMessage _qz;
+    private OscMessage _quaternions;
     
     private OscMessage _listenerX;
     private OscMessage _listenerY;
     private OscMessage _listenerZ;
+
+    private GameObject ambisonicVisualizer;
     
     private void Start()
     {
@@ -50,9 +54,11 @@ public class ListenerIEM : MonoBehaviour
             _oscOutSceneRotator = gameObject.AddComponent<OscOut>();
             _oscOutSceneRotator.Open(PortOutSceneRotator, ip);
             
-            _yaw = new OscMessage($"/SceneRotator/yaw");
-            _pitch = new OscMessage($"/SceneRotator/pitch");
-            _roll = new OscMessage($"/SceneRotator/roll");
+            _qw = new OscMessage($"/SceneRotator/qw");
+            _qx = new OscMessage($"/SceneRotator/qx");
+            _qy = new OscMessage($"/SceneRotator/qy");
+            _qz = new OscMessage($"/SceneRotator/qz");
+            _quaternions = new OscMessage($"/SceneRotator/quaternions");
         }
 
         if (PortIn > 0)
@@ -64,6 +70,8 @@ public class ListenerIEM : MonoBehaviour
             _oscInRoomEncoder.MapFloat($"/RoomEncoder/listenerY", OnReceiveListenerY );
             _oscInRoomEncoder.MapFloat($"/RoomEncoder/listenerZ", OnReceiveListenerZ );
         }
+
+        ambisonicVisualizer = GameObject.Find("AmbisonicVisualizer");
     }
 
     void OnReceiveListenerX(float val)
@@ -98,7 +106,7 @@ public class ListenerIEM : MonoBehaviour
             outMax,
             Mathf.InverseLerp(inMin, inMax, val));
 
-    private void SendPositionToRoomEncoder()
+    private void SendPositionToRoomEncoder() // TODO: move this script to AmbisonicVisualizer and make that the canonical listener tool.
     {
         _pos = transform.position;
         _listenerX.Set(0, _pos.x);
@@ -108,14 +116,14 @@ public class ListenerIEM : MonoBehaviour
         _oscOutRoomEncoder.Send(_listenerY);
         _oscOutRoomEncoder.Send(_listenerZ);
 
-        _rot = transform.rotation.eulerAngles;
+        _rot = ambisonicVisualizer.transform.rotation * transform.rotation;
         
-        _yaw.Set(0, Scale(0, 360, -180, 180, _rot.y));
-        _pitch.Set(0, Scale(0, 360, -180, 180, _rot.x));
-        _roll.Set(0, Scale(0, 360, -180, 180, _rot.z));
-        _oscOutSceneRotator.Send(_yaw);
-        _oscOutSceneRotator.Send(_pitch);
-        _oscOutSceneRotator.Send(_roll);
+        _quaternions.Set(0, _rot.w);
+        _quaternions.Set(1, _rot.z);
+        _quaternions.Set(2, -_rot.x);
+        _quaternions.Set(3, _rot.y);
+        
+        _oscOutSceneRotator.Send(_quaternions);
     }
     
     void Update()
