@@ -1,6 +1,6 @@
 (ns spatial-audio
   (:use [arcadia.core] [arcadia.linear])
-  (:import (UnityEngine GameObject Resources))
+  (:import (UnityEngine GameObject ParticleSystem Resources))
   (:import AudioObjectIEM))
 
 
@@ -63,6 +63,23 @@
 (speaker+ "leigh" 0 [0 0 1] 8051)
 (speaker+ "roger" 1 [1 0 0] 8052)
 (speaker+ "zeb" 2 [1 0 1] 8053)
+
+
+
+
+#_(GameObject/Destroy (object-named "AmbisonicVisualizer"))
+
+(def ambisonic-viz
+  #_(GameObject. "AmbisonicVisualizer")
+  (object-named "AmbisonicVisualizer"))
+
+(def particles 
+  #_(cmpt+ ambisonic-viz ParticleSystem)  ; TODO: set material
+  (cmpt ambisonic-viz ParticleSystem))
+
+#_(.. particles (Clear))
+
+
 
 
 
