@@ -10,7 +10,7 @@ public class ListenerIEM : MonoBehaviour
     public int PortIn;
     public int PortOut;
     public int PortOutSceneRotator;
-    
+
     private GameObject _nametag;
 
     // The GameObject with an AudioObjectIEM we will treat as the "master" for room controls
@@ -23,11 +23,7 @@ public class ListenerIEM : MonoBehaviour
     private Quaternion _rot;
     private Vector3 _pos;
 
-    private OscMessage _qw;
-    private OscMessage _qx;
-    private OscMessage _qy;
-    private OscMessage _qz;
-    private OscMessage _quaternions;
+    private OscMessage _sceneRotatorQuaternions;
     
     private OscMessage _listenerX;
     private OscMessage _listenerY;
@@ -54,11 +50,7 @@ public class ListenerIEM : MonoBehaviour
             _oscOutSceneRotator = gameObject.AddComponent<OscOut>();
             _oscOutSceneRotator.Open(PortOutSceneRotator, ip);
             
-            _qw = new OscMessage($"/SceneRotator/qw");
-            _qx = new OscMessage($"/SceneRotator/qx");
-            _qy = new OscMessage($"/SceneRotator/qy");
-            _qz = new OscMessage($"/SceneRotator/qz");
-            _quaternions = new OscMessage($"/SceneRotator/quaternions");
+            _sceneRotatorQuaternions = new OscMessage($"/SceneRotator/quaternions");
         }
 
         if (PortIn > 0)
@@ -76,12 +68,12 @@ public class ListenerIEM : MonoBehaviour
 
     void OnReceiveListenerX(float val)
     {
-        transform.position = new Vector3(val,transform.position.y,transform.position.z);
+        transform.position = new Vector3(transform.position.x,transform.position.y,val);
     }
     
     void OnReceiveListenerY(float val) // IEM Y = Unity Z
     {
-        transform.position = new Vector3(transform.position.x,transform.position.y,val);
+        transform.position = new Vector3(-val,transform.position.y,transform.position.z);
     }
     
     void OnReceiveListenerZ(float val) // IEM Z = Unity Y
@@ -109,21 +101,21 @@ public class ListenerIEM : MonoBehaviour
     private void SendPositionToRoomEncoder() // TODO: move this script to AmbisonicVisualizer and make that the canonical listener tool.
     {
         _pos = transform.position;
-        _listenerX.Set(0, _pos.x);
-        _listenerY.Set(0, _pos.z); // IEM Y = Unity Z
-        _listenerZ.Set(0, _pos.y); // IEM Z = Unity Y
+        _listenerX.Set(0, _pos.z);
+        _listenerY.Set(0, -_pos.x);
+        _listenerZ.Set(0, _pos.y);
         _oscOutRoomEncoder.Send(_listenerX);
         _oscOutRoomEncoder.Send(_listenerY);
         _oscOutRoomEncoder.Send(_listenerZ);
 
         _rot = ambisonicVisualizer.transform.rotation * transform.rotation;
         
-        _quaternions.Set(0, _rot.w);
-        _quaternions.Set(1, _rot.z);
-        _quaternions.Set(2, -_rot.x);
-        _quaternions.Set(3, _rot.y);
+        _sceneRotatorQuaternions.Set(0, _rot.w);
+        _sceneRotatorQuaternions.Set(1, _rot.z);
+        _sceneRotatorQuaternions.Set(2, -_rot.x);
+        _sceneRotatorQuaternions.Set(3, _rot.y);
         
-        _oscOutSceneRotator.Send(_quaternions);
+        _oscOutSceneRotator.Send(_sceneRotatorQuaternions);
     }
     
     void Update()

@@ -72,19 +72,19 @@ public class AudioObjectIEM : MonoBehaviour
     {
         if (!_isGrabbed)
         {
-            transform.position = new Vector3(val,transform.position.y,transform.position.z);
-        }
-    }
-    
-    void OnReceiveSourceY(float val) // IEM Y = Unity Z
-    {
-        if (!_isGrabbed)
-        {
             transform.position = new Vector3(transform.position.x,transform.position.y,val);
         }
     }
     
-    void OnReceiveSourceZ(float val) // IEM Z = Unity Y
+    void OnReceiveSourceY(float val)
+    {
+        if (!_isGrabbed)
+        {
+            transform.position = new Vector3(-val,transform.position.y,transform.position.z);
+        }
+    }
+    
+    void OnReceiveSourceZ(float val)
     {
         if (!_isGrabbed)
         {
@@ -127,9 +127,9 @@ public class AudioObjectIEM : MonoBehaviour
     private void SendPositionToRoomEncoder()
     {
         _pos = transform.position;
-        _sourceX.Set(0, _pos.x);
-        _sourceY.Set(0, _pos.z); // IEM Y = Unity Z
-        _sourceZ.Set(0, _pos.y); // IEM Z = Unity Y
+        _sourceX.Set(0, _pos.z);
+        _sourceY.Set(0, -_pos.x);
+        _sourceZ.Set(0, _pos.y);
         _oscOutRoomEncoder.Send(_sourceX);
         _oscOutRoomEncoder.Send(_sourceY);
         _oscOutRoomEncoder.Send(_sourceZ);
